@@ -1,0 +1,96 @@
+:root {
+  --color-primary: #525D25;   
+  --color-surface:• #D8CCE3;
+  --color-text: #2b2b2b;
+  --space: 1rem;
+  --radius: 0.75rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #faf6f1;
+}
+
+header {
+  background: var(--color-primary);
+  color: white;
+  padding: var(--space);
+  text-align: center;
+}
+main{
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: var(--space);
+}
+/* Mobile first */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space);
+  align-items: stretch;
+}
+
+/* Flexbox inside the card */
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: var(--space);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.card figure{margin: 0;}
+.card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card__body h3 {
+  margin-top: 0;
+  margin-bottom: var(--space);
+  margin-left: 0.5rem; 
+  color: var(--color-text);
+}
+
+.button {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+.toggle {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem var(--space);
+  cursor: pointer;
+}
+footer { padding: var(--space); }
+.panel {margin-top: var(--space);}
+
+/*Tablet */
+@media (min-width: 48rem) {
+  .card-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* Desktop */
+@media (min-width: 64rem) {
+  .card-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+/* I used CSS Grid for the set of cards because they need to flow in rows and columns that reflow from one column on mobile to three on desktop, and Flexbox inside each card for the simple vertical stack and the row of buttons. For the DOM behavior, I added a vanilla JavaScript show/hide toggle on each card that reveals the ingredients or method panel, switches the button text, and updates aria-expanded. */
