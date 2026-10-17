@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
 :root {
   --color-primary: #525D25;   
   --color-surface:• #D8CCE3;
@@ -6,11 +11,9 @@
   --radius: 0.75rem;
 }
 
-*, *::before, *::after { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background: #faf6f1;
 }
 
