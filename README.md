@@ -1,1 +1,1 @@
-# Modules
+I used CSS Grid for the set of cards because they need to flow in rows and columns that reflow from one column on mobile to three on desktop, and Flexbox inside each card for the simple vertical stack and the row of buttons. For the DOM behavior, I added a vanilla JavaScript show/hide toggle on each card that reveals the ingredients or method panel, switches the button text, and updates aria-expanded. 
